@@ -1,0 +1,22 @@
+api:
+  docs:
+    title: Fake Store API
+    version: 1.0.0
+    description: This is a sample Spring Boot RESTful service using springdoc-openapi and OpenAPI 3.
+
+resilience4j:
+  ratelimiter:
+    instances:
+      basic:
+        limit-for-period: 10
+        limit-refresh-period: 1m
+        timeout-duration: 10s
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - "*"
+          - prometheus
